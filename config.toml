@@ -1,0 +1,108 @@
+baseurl = "https://tosi-n.github.io/playground/"
+publishDir = "docs"
+#draft = false # if set to true, changes will not be published
+#ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
+#enableEmoji = true
+languageCode = "en"
+defaultContentLanguage = "en"
+title = "TOSIN's PLAYGROUND"
+theme = "hugo-theme-dream"
+
+# copyright = ""
+
+# googleAnalytics = ""
+
+# disqusShortname = ""
+
+# enableRobotsTXT = true
+
+[params]
+   author = "TOSIN"
+   motto = "Looping Data"
+   description = ""
+   avatar = "/img/watch-dog.png"
+  
+   email = "tosin94.td@gmail.com" 
+   github = "https://github.com/lade07"
+   twitter = "https://twitter.com/dr_ladeh"
+   linkedin = "https://www.linkedin.com/in/tosin-dairo-077/"
+   medium = "https://medium.com/@dr_ladeh"
+   instagram = "https://instagram.com/dr_ladeh"
+   codepen = ""
+   stackoverflow = ""
+
+  siteStartYear = 2019
+  aboutHeader = "AboutMe"
+
+  paginate = 10
+
+   favicon = "/watch-dog.png"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
