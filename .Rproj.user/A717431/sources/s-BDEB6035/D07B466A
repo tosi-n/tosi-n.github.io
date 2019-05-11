@@ -1,0 +1,25 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1557571805405.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "D07B466A",
+    "lastKnownWriteTime" : 1557565186,
+    "last_content_update" : 1557565186,
+    "path" : "~/Documents/Tosin_R_root/TOSIN/themes/hugo-theme-dream/exampleSite/config.toml",
+    "project_path" : "themes/hugo-theme-dream/exampleSite/config.toml",
+    "properties" : {
+        "cursorPosition" : "33,15",
+        "scrollLine" : "8"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 8,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "toml"
+}

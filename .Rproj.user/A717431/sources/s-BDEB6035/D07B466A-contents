@@ -1,8 +1,5 @@
-baseurl = "https://tosin.github.io/public/"
-publishDir = "docs"
-#draft = false # if set to true, changes will not be published
-#ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
-#enableEmoji = true
+baseurl = "https://example.com"
+publishDir = "../tosin.github.io/public"
 languageCode = "en"
 defaultContentLanguage = "en"
 title = "TOSIN's PLAYGROUND"
@@ -20,7 +17,7 @@ theme = "hugo-theme-dream"
    author = "TOSIN"
    motto = "Looping Data"
    description = ""
-   avatar = "/img/watch-dog.png"
+   avatar = ""
   
    email = "tosin94.td@gmail.com" 
    github = "https://github.com/lade07"
@@ -32,77 +29,8 @@ theme = "hugo-theme-dream"
    stackoverflow = ""
 
   siteStartYear = 2019
-  aboutHeader = "AboutMe"
+  aboutHeader = "About Me"
 
   paginate = 10
 
    favicon = "/favicon.ico"
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
