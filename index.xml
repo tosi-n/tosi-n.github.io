@@ -33,6 +33,15 @@ We&amp;rsquo;ll start with creating a new site with a very basic template.</desc
     </item>
     
     <item>
+      <title>HNG INTERNSHIP 5.0</title>
+      <link>/playground/post/hng/</link>
+      <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
+      
+      <guid>/playground/post/hng/</guid>
+      <description>The journey so far in the tech ecosystem has dealt with loads of practice, reading, asking question, hitting a road block and find a thoroughfare. This has been my life on constant repeat. It is boring but I’m super passionate about it. I started my journey in tech 2 year ago, while still undergoing my veterinary medical studies in Uni. It wasn’t easy early on because getting a sense of direction wasn’t easy.</description>
+    </item>
+    
+    <item>
       <title>Hello R Markdown</title>
       <link>/playground/post/2015-07-23-r-rmarkdown/</link>
       <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
@@ -69,11 +78,20 @@ Follow the following steps:
     
     <item>
       <title></title>
+      <link>/playground/about/desc-center/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/playground/about/desc-center/</guid>
+      <description>I am passionate about how artificial intelligence can impact on health for the general public.  </description>
+    </item>
+    
+    <item>
+      <title></title>
       <link>/playground/about/desc/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/playground/about/desc/</guid>
-      <description>My name is Tosin Dairo, I am a Health Data Scientist with a Veterinary Medical background. I am passionate about how artificial intelligence can impact on health for the general public.  </description>
+      <description>My name is Tosin Dairo, I am a Health Data Scientist with a Veterinary Medical background.  </description>
     </item>
     
   </channel>

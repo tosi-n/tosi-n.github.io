@@ -6,42 +6,33 @@
     <description>Recent content in Categories on TOSIN&#39;s PLAYGROUND</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 12 May 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 23 Jul 2015 21:13:14 -0500</lastBuildDate>
     
 	<atom:link href="/playground/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>RESUMÉ</title>
+      <title>R</title>
       <link>/playground/categories/r/</link>
-      <pubDate>Sun, 12 May 2019 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
       
       <guid>/playground/categories/r/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>ABOUT ME</title>
+      <title>Development</title>
       <link>/playground/categories/development/</link>
-      <pubDate>Sun, 12 May 2019 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
       
       <guid>/playground/categories/development/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>BLOG</title>
+      <title>golang</title>
       <link>/playground/categories/golang/</link>
-      <pubDate>Sun, 12 May 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/playground/categories/golang/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>MINDLOOP</title>
-      <link>/playground/categories/golang/</link>
-      <pubDate>Sun, 12 May 2019 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
       
       <guid>/playground/categories/golang/</guid>
       <description></description>

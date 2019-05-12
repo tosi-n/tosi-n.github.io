@@ -6,39 +6,91 @@
     <description>Recent content in Tags on TOSIN&#39;s PLAYGROUND</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 12 May 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 23 Jul 2015 21:13:14 -0500</lastBuildDate>
     
 	<atom:link href="/playground/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
+    <item>
+      <title>R Markdown</title>
+      <link>/playground/tags/r-markdown/</link>
+      <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
+      
+      <guid>/playground/tags/r-markdown/</guid>
+      <description></description>
+    </item>
     
     <item>
-      <title>Deep Learning</title>
+      <title>plot</title>
+      <link>/playground/tags/plot/</link>
+      <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
+      
+      <guid>/playground/tags/plot/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>regression</title>
+      <link>/playground/tags/regression/</link>
+      <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
+      
+      <guid>/playground/tags/regression/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>development</title>
       <link>/playground/tags/development/</link>
-      <pubDate>Sun, 12 May 2019 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
       
       <guid>/playground/tags/development/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>NLP</title>
+      <title>go</title>
       <link>/playground/tags/go/</link>
-      <pubDate>Sun, 12 May 2019 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
       
       <guid>/playground/tags/go/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>R</title>
+      <title>golang</title>
       <link>/playground/tags/golang/</link>
-      <pubDate>Sun, 12 May 2019 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
       
       <guid>/playground/tags/golang/</guid>
       <description></description>
     </item>
     
+    <item>
+      <title>hugo</title>
+      <link>/playground/tags/hugo/</link>
+      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
+      
+      <guid>/playground/tags/hugo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>templates</title>
+      <link>/playground/tags/templates/</link>
+      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
+      
+      <guid>/playground/tags/templates/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>themes</title>
+      <link>/playground/tags/themes/</link>
+      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
+      
+      <guid>/playground/tags/themes/</guid>
+      <description></description>
+    </item>
     
   </channel>
 </rss>
