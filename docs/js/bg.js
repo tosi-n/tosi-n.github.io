@@ -1,14 +1,13 @@
 // From https://uigradients.com
 var dreamBGGradients = [
   [],
-  ['#77A1D3', '#79CBCA', '#E684AE'], // Wedding Day Blues
+  ['#ff9966', '#ff5e62'], // Orange Coral
   ['#C6FFDD', '#FBD786', '#E684AE'], // MegaTron
   ['#bdc3c7', '#2c3e50'], // Grade Grey
   ['#ad5389', '#3c1053'], // Expresso
-  ['#12c2e9', '#c471ed', '#f64f59'], // JShine
   ['#659999', '#f4791f'], // Metapolis
   ['#544a7d', '#ffd452'], // Kyoo Tah
-  ['#005AA7', '#FFFDE4'] // Evening Night
+  ['#CCCCB2', '#757519'] // Sage Persuasion
 ]
 
 var dreamBody = $('body')
