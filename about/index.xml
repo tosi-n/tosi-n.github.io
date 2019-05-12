@@ -12,11 +12,20 @@
     
     <item>
       <title></title>
+      <link>/playground/about/desc-center/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/playground/about/desc-center/</guid>
+      <description>I am passionate about how artificial intelligence can impact on health for the general public.  </description>
+    </item>
+    
+    <item>
+      <title></title>
       <link>/playground/about/desc/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/playground/about/desc/</guid>
-      <description>My name is Tosin Dairo, I am a Health Data Scientist with a Veterinary Medical background. I am passionate about how artificial intelligence can impact on health for the general public.  </description>
+      <description>My name is Tosin Dairo, I am a Health Data Scientist with a Veterinary Medical background.  </description>
     </item>
     
   </channel>
