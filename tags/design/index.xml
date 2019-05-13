@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>R on TOSIN&#39;s PLAYGROUND</title>
-    <link>/playground/categories/r/</link>
-    <description>Recent content in R on TOSIN&#39;s PLAYGROUND</description>
+    <title>Design on TOSIN&#39;s PLAYGROUND</title>
+    <link>/playground/tags/design/</link>
+    <description>Recent content in Design on TOSIN&#39;s PLAYGROUND</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Mon, 13 May 2019 21:00:28 -0500</lastBuildDate>
     
-	<atom:link href="/playground/categories/r/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/playground/tags/design/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
