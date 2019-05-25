@@ -194,11 +194,11 @@ print_categories(hrt)</code></pre>
 <pre class="r"><code>v2 &lt;- vis_miss(hrt)
 v3 &lt;- gg_miss_var(hrt)
 plot_grid(v2, v3, labels = &quot;AUTO&quot;)</code></pre>
-<p><img src="/playground/post/p_test_files/figure-html/unnamed-chunk-10-2.png" width="672" />
+<p><img src="/post/p_test_files/figure-html/unnamed-chunk-10-2.png" width="672" />
 <br></br>
 As seen above our dataset has no missing values</p>
 <pre class="python"><code>sns.distplot(r.hrt[&#39;chol&#39;])</code></pre>
-<p><img src="/playground/post/p_test_files/figure-html/unnamed-chunk-11-1.png" /><!-- -->
+<p><img src="/post/p_test_files/figure-html/unnamed-chunk-11-1.png" /><!-- -->
 <br></br>
 The above plot simply tells us that cholesterol measure is at its highest observation between 200 and 300</p>
 <pre class="r"><code>colnames(hrt)</code></pre>
@@ -208,24 +208,24 @@ The above plot simply tells us that cholesterol measure is at its highest observ
 <pre class="python"><code>sns.jointplot(x=&#39;age&#39;,y=&#39;chol&#39;,data=r.hrt, kind=&#39;reg&#39;)</code></pre>
 <pre><code>## &lt;seaborn.axisgrid.JointGrid object at 0x129132450&gt;</code></pre>
 <pre class="python"><code>plt.show()</code></pre>
-<p><img src="/playground/post/p_test_files/figure-html/unnamed-chunk-13-1.png" /><!-- -->
+<p><img src="/post/p_test_files/figure-html/unnamed-chunk-13-1.png" /><!-- -->
 <br></br>
 The distribution plot above allows us to compare the population age against cholesterol which is observed more in the older population than in the younger population.There is also a visible correlation as the fitted lm indicates that we can have a continuous prediction of possible outcome.</p>
 <pre class="python"><code>sns.jointplot(x=&#39;age&#39;,y=&#39;chol&#39;,data=r.hrt, kind=&#39;kde&#39;)</code></pre>
 <pre><code>## &lt;seaborn.axisgrid.JointGrid object at 0x12f9704d0&gt;</code></pre>
 <pre class="python"><code>plt.show()</code></pre>
-<p><img src="/playground/post/p_test_files/figure-html/unnamed-chunk-14-1.png" /><!-- -->
+<p><img src="/post/p_test_files/figure-html/unnamed-chunk-14-1.png" /><!-- -->
 <br></br>
 Compared to the previous jointplot, the above plot simply confirms the ideology of cholesterol concentration been higher in the older population than in the younger population.</p>
 <pre class="python"><code>sns.pairplot(r.hrt)</code></pre>
 <pre><code>## &lt;seaborn.axisgrid.PairGrid object at 0x12f79eed0&gt;</code></pre>
 <pre class="python"><code>plt.show()</code></pre>
-<p><img src="/playground/post/p_test_files/figure-html/unnamed-chunk-15-1.png" /><!-- -->
+<p><img src="/post/p_test_files/figure-html/unnamed-chunk-15-1.png" /><!-- -->
 <br></br>
 This is the fastest way to see through a dataset and explore the correlations between variables as well as visualising datatypes (categorical or continuous) and visualising their distributions. It is best to use a pairplot of the dataset as a whole in order to have a complete view.</p>
 <pre class="python"><code>sns.violinplot(x=&quot;sex&quot;, y=&quot;target&quot;, data=r.hrt, palette=&quot;rainbow&quot;)
 plt.show()</code></pre>
-<p><img src="/playground/post/p_test_files/figure-html/unnamed-chunk-17-1.png" /><!-- -->
+<p><img src="/post/p_test_files/figure-html/unnamed-chunk-17-1.png" /><!-- -->
 <br></br>
 This final plot is known as a violin plot which shows that the captured data has the female population exhibiting the target outcome more than the male population. That is in context with this dataset, the female population would have a higher tendency of been affected with a heart disease but not statistically confirmed or proven.</p>
 <p><br></br></p>
