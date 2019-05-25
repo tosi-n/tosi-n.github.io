@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>
+Exploratory Data Analysis (EDA)
+</title>
+
+  
+  
+  
+  <meta name="author" content="Tosi-n" />
+  <meta name="description" content="As the name suggests, this is an essential pipeline in data science workflow that involves exploration and understanding of data in order to determine the value of the attached variable, how they interlink and correlate with each other. In order to attain flexibility and rapid exploration process, I would share my workflow which involves a mixture of both R and Python programming language." />
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Exploratory Data Analysis (EDA)"/>
+  <meta property="og:url" content="/post/p_test/"/>
+  <meta property="og:description" content="As the name suggests, this is an essential pipeline in data science workflow that involves exploration and understanding of data in order to determine the value of the attached variable, how they interlink and correlate with each other. In order to attain flexibility and rapid exploration process, I would share my workflow which involves a mixture of both R and Python programming language."/>
+  <meta name="og:image" content="/post/p_test_files/figure-html/unnamed-chunk-17-1.png" >
+  <meta name="twitter:card" content="summary">
+
+
+
+<link href="/img/watch-dog.png" rel="shortcut icon" type="image/x-icon" />
+
+
+
+<meta name="generator" content="Hugo 0.55.5" />
+
+
+<link rel="canonical" href="/post/p_test/" />
+<link rel="alternative" href="/playground/index.xml" title="TOSIN&#39;s PLAYGROUND" type="application/atom+xml" />
+
+<link href="/css/semantic.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="/css/site.css" />
+
+
+</head>
+
+<body>
+  <div class="flip-container">
+    <div class="flipper">
+      <section class="front">
+        
+<nav class="ui top secondary menu">
+  <div class="item">
+    <i class="inverted big link backward icon dream-flip-toggle" title="Flip it!"></i>
+  </div>
+  <div class="item">
+    <a href="/">
+      <i class="inverted big link home icon" title="Home"></i>
+    </a>
+  </div>
+</nav>
+ 
+<div class="ui centered grid">
+  <div class="fifteen wide mobile fifteen wide tablet eleven wide computer column post-list post-single-main">
+
+    <section class="ui secondary top attached black segment">
+      <a class="ui black right corner label" href="javascript:void(0)" onclick="savePostAsImg()">
+        <i class="save icon"></i>
+      </a>
+      <header>
+        <h1 class="ui header">
+          Exploratory Data Analysis (EDA)
+          <div class="sub header">@ Tosi-n · May 25, 2019 · 8 min read · Update at May 25, 2019</div>
+        </h1>
+      </header>
+      <article class="post-content" style="margin-top: 2rem; font-size: 1.4rem;">
+
+
+<p>As the name suggest, this is an essential pipeline in data science workflow that involves exploration and understanding of data in order to determine the value of the attached variable, how they interlink and correlate with each other.
+In order to attain flexibility and rapid exploration process, I would share my workflow which involves a mixture of both R and Python programming language. To become a good data scientist, it is essential to get very comfortable with any of these 2 languages mostly Python as it is the most used in job practices and has a huge community of developers. I would suggest you expose yourself to be able to use both languages not necessary in the same environment, but a good knowledge of their syntax would give a major headway to work efficiently as a data scientist and a machine learning practitioner.</p>
+<p><br></br></p>
+<p>The goal of EDA is to help us understand our dataset better and in order to achieve this, the following base features / characteristics must be handled:</p>
+<ul>
+<li>Names and number of variables observed</li>
+<li>Level of data missingness</li>
+<li>Presence of outliers</li>
+<li>Variable types and class</li>
+<li>Determine predictor variables and outcomes</li>
+<li>Split variables into continuous/categorical classes</li>
+</ul>
+<p><br></br></p>
+<p>For this first part of EDA series which should always be the first line of action of a data scientist after data collection or before data cleaning and going in too deep into predictive analysis or machine learning, we would be focusing on data visualisation for EDA which is a very powerful tool often neglected considering the ease it brings to understanding data. The second part of this series would be using distribution, probability and some statistical test package to explore our data better.
+To achieve our goal today we would be using R-Studio and the following packages: Mice for missing data exploration and imputation; Reticulate for using both R and python objects in the same environment; on the python library side, we would be using Pandas for dataframe manipulation and analysis; then Seaborn and Matplotlib for visualisation.</p>
+<p>To achieve our goal, we would take advantage of the heart disease dataset captured by Cleveland database available on Kaggle. Note, this datasets have been deidentified and cannot be traced back to patients in any form for privacy and confidentiality purposes.</p>
+<p>We import our dataset into R using read.csv and ensure a copy is available for python as an object, this can be done the other way round by importing dataset through python, which is equivalent to pd.read_csv() as dataframe and using python as a prefix to make a copy to the python objects available to R.</p>
+<pre class="r"><code>getwd()</code></pre>
+<pre><code>## [1] &quot;/Users/lade/Documents/Tosin_R_root&quot;</code></pre>
+<pre class="r"><code>head(hrt)</code></pre>
+<pre><code>##   age sex cp trestbps chol fbs restecg thalach exang oldpeak slope ca thal
+## 1  63   1  3      145  233   1       0     150     0     2.3     0  0    1
+## 2  37   1  2      130  250   0       1     187     0     3.5     0  0    2
+## 3  41   0  1      130  204   0       0     172     0     1.4     2  0    2
+## 4  56   1  1      120  236   0       1     178     0     0.8     2  0    2
+## 5  57   0  0      120  354   0       1     163     1     0.6     2  0    2
+## 6  57   1  0      140  192   0       1     148     0     0.4     1  0    1
+##   target
+## 1      1
+## 2      1
+## 3      1
+## 4      1
+## 5      1
+## 6      1</code></pre>
+<pre class="python"><code>r.hrt.dtypes</code></pre>
+<pre><code>## age           int32
+## sex           int32
+## cp            int32
+## trestbps      int32
+## chol          int32
+## fbs           int32
+## restecg       int32
+## thalach       int32
+## exang         int32
+## oldpeak     float64
+## slope         int32
+## ca            int32
+## thal          int32
+## target        int32
+## dtype: object</code></pre>
+<pre class="python"><code>r.hrt.shape</code></pre>
+<pre><code>## (303, 14)</code></pre>
+<p>Read your data guidelines or labeled notes thoroughly to understand what your data is trying to achieve and methods through which they were captured that would determine data completeness or missingness. Using R mice package we can check and visualise our data missingness as seen below. Check data summary using R object. R is know to produce more useful diagnostic outputs than python.</p>
+<pre class="r"><code>str(hrt)</code></pre>
+<pre><code>## &#39;data.frame&#39;:    303 obs. of  14 variables:
+##  $ age     : int  63 37 41 56 57 57 56 44 52 57 ...
+##  $ sex     : int  1 1 0 1 0 1 0 1 1 1 ...
+##  $ cp      : int  3 2 1 1 0 0 1 1 2 2 ...
+##  $ trestbps: int  145 130 130 120 120 140 140 120 172 150 ...
+##  $ chol    : int  233 250 204 236 354 192 294 263 199 168 ...
+##  $ fbs     : int  1 0 0 0 0 0 0 0 1 0 ...
+##  $ restecg : int  0 1 0 1 1 1 0 1 1 1 ...
+##  $ thalach : int  150 187 172 178 163 148 153 173 162 174 ...
+##  $ exang   : int  0 0 0 0 1 0 0 0 0 0 ...
+##  $ oldpeak : num  2.3 3.5 1.4 0.8 0.6 0.4 1.3 0 0.5 1.6 ...
+##  $ slope   : int  0 0 2 2 2 1 1 2 2 2 ...
+##  $ ca      : int  0 0 0 0 0 0 0 0 0 0 ...
+##  $ thal    : int  1 2 2 2 2 1 2 3 3 2 ...
+##  $ target  : int  1 1 1 1 1 1 1 1 1 1 ...</code></pre>
+<pre class="r"><code>source_python(file=&quot;EDA_cat.py&quot;)
+print_categories(hrt)</code></pre>
+<pre class="r"><code>summary(hrt)</code></pre>
+<pre><code>##       age             sex               cp           trestbps    
+##  Min.   :29.00   Min.   :0.0000   Min.   :0.000   Min.   : 94.0  
+##  1st Qu.:47.50   1st Qu.:0.0000   1st Qu.:0.000   1st Qu.:120.0  
+##  Median :55.00   Median :1.0000   Median :1.000   Median :130.0  
+##  Mean   :54.37   Mean   :0.6832   Mean   :0.967   Mean   :131.6  
+##  3rd Qu.:61.00   3rd Qu.:1.0000   3rd Qu.:2.000   3rd Qu.:140.0  
+##  Max.   :77.00   Max.   :1.0000   Max.   :3.000   Max.   :200.0  
+##       chol            fbs            restecg          thalach     
+##  Min.   :126.0   Min.   :0.0000   Min.   :0.0000   Min.   : 71.0  
+##  1st Qu.:211.0   1st Qu.:0.0000   1st Qu.:0.0000   1st Qu.:133.5  
+##  Median :240.0   Median :0.0000   Median :1.0000   Median :153.0  
+##  Mean   :246.3   Mean   :0.1485   Mean   :0.5281   Mean   :149.6  
+##  3rd Qu.:274.5   3rd Qu.:0.0000   3rd Qu.:1.0000   3rd Qu.:166.0  
+##  Max.   :564.0   Max.   :1.0000   Max.   :2.0000   Max.   :202.0  
+##      exang           oldpeak         slope             ca        
+##  Min.   :0.0000   Min.   :0.00   Min.   :0.000   Min.   :0.0000  
+##  1st Qu.:0.0000   1st Qu.:0.00   1st Qu.:1.000   1st Qu.:0.0000  
+##  Median :0.0000   Median :0.80   Median :1.000   Median :0.0000  
+##  Mean   :0.3267   Mean   :1.04   Mean   :1.399   Mean   :0.7294  
+##  3rd Qu.:1.0000   3rd Qu.:1.60   3rd Qu.:2.000   3rd Qu.:1.0000  
+##  Max.   :1.0000   Max.   :6.20   Max.   :2.000   Max.   :4.0000  
+##       thal           target      
+##  Min.   :0.000   Min.   :0.0000  
+##  1st Qu.:2.000   1st Qu.:0.0000  
+##  Median :2.000   Median :1.0000  
+##  Mean   :2.314   Mean   :0.5446  
+##  3rd Qu.:3.000   3rd Qu.:1.0000  
+##  Max.   :3.000   Max.   :1.0000</code></pre>
+<p>Using R’s <a href="">DataExplorer package</a>, find the attached report on our dataset that gives a rapid overview of the current state of our data. This can be very useful for a fast workflow</p>
+<pre class="r"><code>DataExplorer::create_report(hrt)</code></pre>
+<pre class="r"><code>table(is.na.data.frame(hrt))</code></pre>
+<pre><code>## 
+## FALSE 
+##  4242</code></pre>
+<pre class="r"><code>md.pattern(hrt)</code></pre>
+<pre><code>##  /\     /\
+## {  `---&#39;  }
+## {  O   O  }
+## ==&gt;  V &lt;==  No need for mice. This data set is completely observed.
+##  \  \|/  /
+##   `-----&#39;</code></pre>
+<p><img src="/post/p_test_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
+<pre><code>##     age sex cp trestbps chol fbs restecg thalach exang oldpeak slope ca
+## 303   1   1  1        1    1   1       1       1     1       1     1  1
+##       0   0  0        0    0   0       0       0     0       0     0  0
+##     thal target  
+## 303    1      1 0
+##        0      0 0</code></pre>
+<pre class="r"><code>v2 &lt;- vis_miss(hrt)
+v3 &lt;- gg_miss_var(hrt)
+plot_grid(v2, v3, labels = &quot;AUTO&quot;)</code></pre>
+<p><img src="/playground/post/p_test_files/figure-html/unnamed-chunk-10-2.png" width="672" />
+<br></br>
+As seen above our dataset has no missing values</p>
+<pre class="python"><code>sns.distplot(r.hrt[&#39;chol&#39;])</code></pre>
+<p><img src="/playground/post/p_test_files/figure-html/unnamed-chunk-11-1.png" /><!-- -->
+<br></br>
+The above plot simply tells us that cholesterol measure is at its highest observation between 200 and 300</p>
+<pre class="r"><code>colnames(hrt)</code></pre>
+<pre><code>##  [1] &quot;age&quot;      &quot;sex&quot;      &quot;cp&quot;       &quot;trestbps&quot; &quot;chol&quot;     &quot;fbs&quot;     
+##  [7] &quot;restecg&quot;  &quot;thalach&quot;  &quot;exang&quot;    &quot;oldpeak&quot;  &quot;slope&quot;    &quot;ca&quot;      
+## [13] &quot;thal&quot;     &quot;target&quot;</code></pre>
+<pre class="python"><code>sns.jointplot(x=&#39;age&#39;,y=&#39;chol&#39;,data=r.hrt, kind=&#39;reg&#39;)</code></pre>
+<pre><code>## &lt;seaborn.axisgrid.JointGrid object at 0x129132450&gt;</code></pre>
+<pre class="python"><code>plt.show()</code></pre>
+<p><img src="/playground/post/p_test_files/figure-html/unnamed-chunk-13-1.png" /><!-- -->
+<br></br>
+The distribution plot above allows us to compare the population age against cholesterol which is observed more in the older population than in the younger population.There is also a visible correlation as the fitted lm indicates that we can have a continuous prediction of possible outcome.</p>
+<pre class="python"><code>sns.jointplot(x=&#39;age&#39;,y=&#39;chol&#39;,data=r.hrt, kind=&#39;kde&#39;)</code></pre>
+<pre><code>## &lt;seaborn.axisgrid.JointGrid object at 0x12f9704d0&gt;</code></pre>
+<pre class="python"><code>plt.show()</code></pre>
+<p><img src="/playground/post/p_test_files/figure-html/unnamed-chunk-14-1.png" /><!-- -->
+<br></br>
+Compared to the previous jointplot, the above plot simply confirms the ideology of cholesterol concentration been higher in the older population than in the younger population.</p>
+<pre class="python"><code>sns.pairplot(r.hrt)</code></pre>
+<pre><code>## &lt;seaborn.axisgrid.PairGrid object at 0x12f79eed0&gt;</code></pre>
+<pre class="python"><code>plt.show()</code></pre>
+<p><img src="/playground/post/p_test_files/figure-html/unnamed-chunk-15-1.png" /><!-- -->
+<br></br>
+This is the fastest way to see through a dataset and explore the correlations between variables as well as visualising datatypes (categorical or continuous) and visualising their distributions. It is best to use a pairplot of the dataset as a whole in order to have a complete view.</p>
+<pre class="python"><code>sns.violinplot(x=&quot;sex&quot;, y=&quot;target&quot;, data=r.hrt, palette=&quot;rainbow&quot;)
+plt.show()</code></pre>
+<p><img src="/playground/post/p_test_files/figure-html/unnamed-chunk-17-1.png" /><!-- -->
+<br></br>
+This final plot is known as a violin plot which shows that the captured data has the female population exhibiting the target outcome more than the male population. That is in context with this dataset, the female population would have a higher tendency of been affected with a heart disease but not statistically confirmed or proven.</p>
+<p><br></br></p>
+<div id="thanks-for-reading-along-and-enjoying-this-piece.-would-work-on-a-follow-up-for-the-second-part-of-this-series-soon.-if-you-need-the-codes-for-this-blog-do-indicate-in-the-comment-section-or-reach-out-on-any-of-my-socials" class="section level5">
+<h5>Thanks for reading along and enjoying this piece. Would work on a follow up for the second part of this series soon. If you need the codes for this blog do indicate in the comment section or reach out on any of my socials</h5>
+</div>
+<div id="please-share-your-thoughts-and-comments-below-to-encourage-future-write-up.." class="section level3">
+<h3>Please share your thoughts and comments below to encourage future write up..</h3>
+</div>
+</article>
+    </section>
+
+    <footer class="ui secondary attached segment dream-tags">
+      
+      
+      <a class="ui label" href="/playground/tags/r-markdown" title="R Markdown">R Markdown</a>
+      
+      <a class="ui label" href="/playground/tags/eda" title="EDA">EDA</a>
+      
+      <a class="ui label" href="/playground/tags/visualization" title="Visualization">Visualization</a>
+      
+      
+    </footer>
+
+    
+
+    
+    <footer class="ui secondary bottom attached stacked segment post-disqus-area" data-html2canvas-ignore="true">
+      <div id="disqus_thread"></div>
+      <script>
+      
+
+      
+
+
+      var disqus_config = function () {
+      this.page.url = 'https:\/\/tosi-n.github.io\/post\/p_test\/';  
+      this.page.identifier = 'https:\/\/tosi-n.github.io\/post\/p_test\/'; 
+      };
+
+      (function() { 
+      var d = document, s = d.createElement('script');
+      s.src = 'https://' + 'tosi-n' + '.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+      })();
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </footer>
+    
+
+  </div>
+  <div class="fifteen wide mobile fifteen wide tablet four wide computer column">
+
+    <section class="ui top attached center aligned inverted segment">
+  <div class="ui small circular image">
+    
+    <img src="/img/watch-dog.png">
+    
+  </div>
+  <h3 class="ui header">TOSIN&#39;s PLAYGROUND<div class="sub header" style="color: white;">Looping Data</div>
+  </h3>
+
+  <div class="ui inverted horizontal list">
+    
+    
+    <div class="item">
+    <a href="mailto:tosin94.td@gmail.com">
+      <i class="inverted big mail icon" title="email"></i>
+    </a>
+  </div>
+  
+  
+  <div class="item">
+    <a href="https://github.com/tosi-n" target="_blank">
+      <i class="inverted big github icon" title="github"></i>
+    </a>
+  </div>
+  
+  
+  <div class="item">
+    <a href="https://www.twitter.com/dr_ladeh" target="_blank">
+      <i class="inverted big twitter icon" title="twitter"></i>
+    </a>
+  </div>
+  
+  
+  <div class="item">
+    <a href="https://www.linkedin.com/in/tosin-dairo-077/" target="_blank">
+      <i class="inverted big linkedin icon" title="linkedin"></i>
+    </a>
+  </div>
+  
+  
+  <div class="item">
+    <a href="https://www.medium.com/@dr_ladeh" target="_blank">
+      <i class="inverted big medium icon" title="medium"></i>
+    </a>
+  </div>
+    
+    <!--a class="item" href="/playground/post">
+      <i class="archive icon" title="Archives"></i>
+    </a>
+    
+    <a class="item" href="/playground/tags">
+      <i class="tags icon" title="All Tags"></i>
+    </a>
+    <a class="item" href="/playground/categories">
+      <i class="inverted cubes icon" title="All Categories"></i>
+    </a>
+  </div-->
+
+  <a id="tag-category-pop" class="ui blue right corner label">
+    <i class="info icon" title="Click this to pop tags and categories"></i>
+  </a>
+</section>
+
+
+<section class="ui attached center aligned inverted segment dream-header-tags dream-tags">
+  
+  <a class="ui label" href="/playground/tags/development" title="development">Deep Learning</a>
+  
+  <a class="ui label" href="/playground/tags/go" title="go">NLP</a>
+  
+  <a class="ui label" href="/playground/tags/golang" title="golang">R</a>
+  
+  
+</section>
+
+
+
+<section class="ui attached inverted segment dream-categories">
+  <div class="ui inverted accordion">
+    
+    <div class="inverted big link backward icon dream-flip-toggle">
+      <a style="color: GREEN;">ABOUT ME</a> 
+    </div>
+
+    
+    <div class="title">
+      <a href="/playground/categories/golang" class="item" style="color: YELLOW;">BLOG</a>
+    </div>
+
+    
+    <div class="title">
+      <a href="/playground/categories/r" class="item" style="color: red;">RESUMÉ</a>
+    </div>
+    
+    <div class="title">
+      <a href="/playground/categories/r" class="item" style="color: BLUE;">MINDLOOP</a>
+    </div>
+
+    
+  </div>
+</section>
+
+
+<section class="ui bottom attached center aligned inverted segment">
+    
+    <p>© 2019 TOSIN&#39;s PLAYGROUND</p>
+    
+    
+</section>
+
+
+  </div>
+</div>
+
+      </section>
+      <section class="back">
+        <nav class="ui top secondary menu" style="overflow-x: auto">
+  <div class="item">
+    <i class="inverted big link forward icon dream-flip-toggle" title="Flip it!"></i>
+  </div>
+  
+  <div class="item">
+    <a href="mailto:tosin94.td@gmail.com">
+      <i class="inverted big mail icon" title="email"></i>
+    </a>
+  </div>
+  
+  
+  <div class="item">
+    <a href="https://github.com/tosi-n" target="_blank">
+      <i class="inverted big github icon" title="github"></i>
+    </a>
+  </div>
+  
+  
+  <div class="item">
+    <a href="https://www.twitter.com/dr_ladeh" target="_blank">
+      <i class="inverted big twitter icon" title="twitter"></i>
+    </a>
+  </div>
+  
+  
+  <div class="item">
+    <a href="https://www.linkedin.com/in/tosin-dairo-077/" target="_blank">
+      <i class="inverted big linkedin icon" title="linkedin"></i>
+    </a>
+  </div>
+  
+  
+  <div class="item">
+    <a href="https://www.medium.com/@dr_ladeh" target="_blank">
+      <i class="inverted big medium icon" title="medium"></i>
+    </a>
+  </div>
+  
+  
+  
+  
+</nav>
+
+<div class="ui centered grid about">
+  <div class="fifteen wide mobile fifteen wide tablet fifteen wide computer column">
+
+    <section class="ui stacked segments">
+      <header class="ui inverted segment">
+        <h2 class="ui header">
+          About Me
+        </h2>
+      </header>
+
+      <article class="ui inverted segment back-about">
+        <div class="ui stackable three column grid">
+          <div class="column">
+              
+              <pre><code class="language-md">My name is Tosin Dairo, I am a 
+Health Data Scientist 
+with a Veterinary Medical 
+background.
+
+</code></pre>
+              
+          </div>
+          <div class="column">
+              
+              <pre><code class="language-md">I am passionate about how 
+artificial intelligence can 
+impact on health for the general public.
+</code></pre>
+              
+          </div>
+          <div class="column">
+              
+          </div>
+        </div>
+      </article>
+
+      
+
+      
+      
+    </section>
+
+  </div>
+</div>
+
+      </section>
+    </div>
+  </div>
+
+  
+<script src="/js/jquery.min.js"></script>
+<script src="/js/semantic.min.js"></script>
+<script src="/js/html2canvas.min.js"></script>
+<script src="/js/bg.js"></script>
+<script src="/js/site.js"></script>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-140789366-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,212 @@
+---
+title: Exploratory Data Analysis (EDA)
+author: "Tosin Dairo"
+date: 2019-05-25T21:00:28-05:00
+categories: ["R"]
+tags: ["R Markdown", "EDA", "Visualization"]
+---
+
+
+As the name suggest, this is an essential pipeline in data science workflow that involves exploration and understanding of data in order to determine the value of the attached variable, how they interlink and correlate with each other.
+In order to attain flexibility and rapid exploration process, I would share my workflow which involves a mixture of both R and Python programming language. To become a good data scientist, it is essential to get very comfortable with any of these 2 languages mostly Python as it is the most used in job practices and has a huge community of developers. I would suggest you expose yourself to be able to use both languages not necessary in the same environment, but a good knowledge of their syntax would give a major headway to work efficiently as a data scientist and a machine learning practitioner. 
+
+<br></br>
+
+The goal of EDA is to help us understand our dataset better and in order to achieve this, the following base features / characteristics must be handled:
+-  Names and number of variables observed
+-  Level of data missingness
+-  Presence of outliers
+-  Variable types and class
+-  Determine predictor variables and outcomes
+-  Split variables into continuous/categorical classes
+
+<br></br> 
+
+
+```{r include=FALSE}
+knitr::opts_knit$set(root.dir = '/Users/lade/Documents/Tosin_R_root')
+library(reticulate)
+#virtualenv_install("r-reticulate", "matplotlib")
+use_virtualenv("r-reticulate")
+# importing required Python libraries/modules
+library(mice)
+library(tidyverse)
+library(naniar)
+library(cowplot)
+library(DataExplorer)
+#source_python(file="EDA_cat.py")
+hrt <- read.csv("heart.csv")
+#data_p <- r_to_py(data)
+```
+
+For this first part of EDA series which should always be the first line of action of a data scientist after data collection or before data cleaning and going in too deep into predictive analysis or machine learning, we would be focusing on data visualisation for EDA which is a very powerful tool often neglected considering the ease it brings to understanding data. The second part of this series would be using distribution, probability and some statistical test package to explore our data better.
+To achieve our goal today we would be using R-Studio and the following packages: Mice for missing data exploration and imputation; Reticulate for using both R and python objects in the same environment; on the python library side, we would be using Pandas for dataframe manipulation and analysis; then Seaborn and Matplotlib for visualisation.
+
+To achieve our goal, we would take advantage of the heart disease dataset captured by Cleveland database available on Kaggle. Note, this datasets have been deidentified  and cannot be traced back to patients in any form for privacy and confidentiality purposes.
+
+```{python include=FALSE}
+import os
+import pandas as pd
+import numpy as np
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+```
+
+We import our dataset into R using read.csv and ensure a copy is available for python as an object, this can be done the other way round by importing dataset through python, which is equivalent to pd.read_csv() as dataframe and using python as a prefix to make a copy to the python objects available to R.
+
+```{r}
+getwd()
+```
+
+
+
+```{r}
+head(hrt)
+```
+
+
+
+```{python}
+r.hrt.dtypes
+```
+
+
+
+```{python}
+r.hrt.shape
+```
+
+Read your data guidelines or labeled notes thoroughly to understand what your data is trying to achieve and methods through which they were captured that would determine data completeness or missingness. Using R mice package we can check and visualise our data missingness as seen below. Check data summary using R object. R is know to produce more useful diagnostic outputs than python.
+
+```{r}
+str(hrt)
+source_python(file="EDA_cat.py")
+print_categories(hrt)
+```
+
+
+
+```{r}
+summary(hrt)
+```
+
+
+Using R's [DataExplorer package](), find the attached report on our dataset that gives a rapid overview of the current state of our data. This can be very useful for a fast workflow
+```{r eval=FALSE}
+DataExplorer::create_report(hrt)
+```
+
+
+
+```{r}
+table(is.na.data.frame(hrt))
+md.pattern(hrt)
+v2 <- vis_miss(hrt)
+v3 <- gg_miss_var(hrt)
+plot_grid(v2, v3, labels = "AUTO")
+```
+<br></br>
+As seen above our dataset has no missing values
+
+
+```{python}
+sns.distplot(r.hrt['chol'])
+```
+<br></br>
+The above plot simply tells us that cholesterol measure is at its highest observation between 200 and 300 
+
+
+```{r}
+colnames(hrt)
+```
+
+
+
+```{python}
+sns.jointplot(x='age',y='chol',data=r.hrt, kind='reg')
+plt.show()
+```
+<br></br>
+The distribution plot above allows us to compare the population age against cholesterol which is observed more in the older population than in the younger population.There is also a visible correlation as the fitted lm indicates that we can have a continuous prediction of possible outcome. 
+
+
+```{python}
+sns.jointplot(x='age',y='chol',data=r.hrt, kind='kde')
+plt.show()
+```
+<br></br>
+Compared to the previous jointplot, the above plot simply confirms the ideology of cholesterol concentration been higher in the older population than in the younger population.
+
+
+```{python}
+sns.pairplot(r.hrt)
+plt.show()
+```
+<br></br>
+This is the fastest way to see through a dataset and explore the correlations between variables as well as visualising datatypes (categorical or continuous) and visualising their distributions. It is best to use a pairplot of the dataset as a whole in order to have a complete view.
+
+
+```{r}
+
+```
+
+
+
+```{python}
+sns.violinplot(x="sex", y="target", data=r.hrt, palette="rainbow")
+plt.show()
+```
+<br></br>
+This final plot is known as a violin plot which shows that the captured data has the female population exhibiting the target outcome more than the male population. That is in context with this dataset, the female population would have a higher tendency of been affected with a heart disease but not statistically confirmed or proven.
+
+
+```{r}
+
+```
+
+<br></br>
+
+##### Thanks for reading along and enjoying this piece. Would work on a follow up for the second part of this series soon.  If you need the codes for this blog do indicate in the comment section or reach out on any of my socials 
+
+### Please share your thoughts and comments below to encourage future write up..
+
+```{r}
+
+```
+
+
+
+```{r}
+
+```
+
+
+
+```{r}
+
+```
+
+
+
+```{r}
+
+```
+
+
+
+```{r}
+
+```
+
+
+
+```{r}
+
+```
+
+
+
+```{r}
+
+```
