@@ -6,39 +6,28 @@
     <description>Recent content in Tags on TOSIN&#39;s PLAYGROUND</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 12 May 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 13 May 2019 21:00:28 -0500</lastBuildDate>
     
 	<atom:link href="/playground/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
-    
     <item>
-      <title>Deep Learning</title>
-      <link>/playground/tags/development/</link>
-      <pubDate>Sun, 12 May 2019 00:00:00 +0000</pubDate>
+      <title>Design</title>
+      <link>/playground/tags/design/</link>
+      <pubDate>Mon, 13 May 2019 21:00:28 -0500</pubDate>
       
-      <guid>/playground/tags/development/</guid>
+      <guid>/playground/tags/design/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>NLP</title>
-      <link>/playground/tags/go/</link>
-      <pubDate>Sun, 12 May 2019 00:00:00 +0000</pubDate>
+      <title>R Markdown</title>
+      <link>/playground/tags/r-markdown/</link>
+      <pubDate>Mon, 13 May 2019 21:00:28 -0500</pubDate>
       
-      <guid>/playground/tags/go/</guid>
+      <guid>/playground/tags/r-markdown/</guid>
       <description></description>
     </item>
-    
-    <item>
-      <title>R</title>
-      <link>/playground/tags/golang/</link>
-      <pubDate>Sun, 12 May 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/playground/tags/golang/</guid>
-      <description></description>
-    </item>
-    
     
   </channel>
 </rss>

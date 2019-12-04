@@ -6,20 +6,18 @@
     <description>Recent content in R Markdown on TOSIN&#39;s PLAYGROUND</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 23 Jul 2015 21:13:14 -0500</lastBuildDate>
+    <lastBuildDate>Mon, 13 May 2019 21:00:28 -0500</lastBuildDate>
     
 	<atom:link href="/playground/tags/r-markdown/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Hello R Markdown</title>
-      <link>/playground/post/2015-07-23-r-rmarkdown/</link>
-      <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
+      <title>HNG INTERNSHIP 5.0</title>
+      <link>/playground/post/hng/</link>
+      <pubDate>Mon, 13 May 2019 21:00:28 -0500</pubDate>
       
-      <guid>/playground/post/2015-07-23-r-rmarkdown/</guid>
-      <description>R Markdown This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see http://rmarkdown.rstudio.com.
-You can embed an R code chunk like this:
-summary(cars) ## speed dist ## Min. : 4.0 Min. : 2.00 ## 1st Qu.:12.0 1st Qu.: 26.00 ## Median :15.0 Median : 36.00 ## Mean :15.4 Mean : 42.98 ## 3rd Qu.</description>
+      <guid>/playground/post/hng/</guid>
+      <description>The journey so far in the tech ecosystem has dealt with loads of practice, reading, asking question, hitting a road block and find a thoroughfare. This has been my life on constant repeat. It is boring but I’m super passionate about it. I started my journey in tech 2 year ago, while still undergoing my veterinary medical studies in Uni. It wasn’t easy early on because getting a sense of direction wasn’t easy.</description>
     </item>
     
   </channel>
