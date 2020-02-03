@@ -72,9 +72,9 @@ Exploratory Data Analysis (EDA)
 
 
 <p>As the name suggest, this is an essential pipeline in data science workflow that involves exploration and understanding of data in order to determine the value of the attached variable, how they interlink and correlate with each other.
-In order to attain flexibility and rapid exploration process, I would share my workflow which involves a mixture of both R and Python programming language. To become a good data scientist, it is essential to get very comfortable with any of these 2 languages mostly Python as it is the most used in job practices and has a huge community of developers. I would suggest you expose yourself to be able to use both languages not necessary in the same environment, but a good knowledge of their syntax would give a major headway to work efficiently as a data scientist and a machine learning practitioner.</p>
+In order to attain flexibility and rapid exploration process, I would share my workflow which involves a mixture of both R and Python programming language. To become a good data scientist, it is essential to get very comfortable with any of these 2 languages mostly Python as it is the most used in job practices and has a huge community of developers. I would suggest you expose yourself to be able to use both languages. A good knowledge of their syntax would give a major headway to work efficiently as a data scientist and a machine learning practitioner.</p>
 <p><br></br></p>
-<p>The goal of EDA is to help us understand our dataset better and in order to achieve this, the following base features / characteristics must be handled:</p>
+<p>The goal of EDA is to help us understand our datasets better, in order to achieve this, the following base features must be handled:</p>
 <ul>
 <li>Names and number of variables observed</li>
 <li>Level of data missingness</li>
@@ -84,10 +84,10 @@ In order to attain flexibility and rapid exploration process, I would share my w
 <li>Split variables into continuous/categorical classes</li>
 </ul>
 <p><br></br></p>
-<p>For this first part of EDA series which should always be the first line of action of a data scientist after data collection or before data cleaning and going in too deep into predictive analysis or machine learning, we would be focusing on data visualisation for EDA which is a very powerful tool often neglected considering the ease it brings to understanding data. The second part of this series would be using distribution, probability and some statistical test package to explore our data better.
+<p>For this first part of EDA series, the first line of action for a data scientist after data collection or before data wrangling, predictive analytics or machine learning, focus on data visualisation for EDA which is a very powerful tool often neglected considering the ease it brings to understanding data. The second part of this series would be using distribution, probability and some statistical test package to explore our data better.
 To achieve our goal today we would be using R-Studio and the following packages: Mice for missing data exploration and imputation; Reticulate for using both R and python objects in the same environment; on the python library side, we would be using Pandas for dataframe manipulation and analysis; then Seaborn and Matplotlib for visualisation.</p>
-<p>To achieve our goal, we would take advantage of the heart disease dataset captured by Cleveland database available on Kaggle. Note, this datasets have been deidentified and cannot be traced back to patients in any form for privacy and confidentiality purposes.</p>
-<p>We import our dataset into R using read.csv and ensure a copy is available for python as an object, this can be done the other way round by importing dataset through python, which is equivalent to pd.read_csv() as dataframe and using python as a prefix to make a copy to the python objects available to R.</p>
+<p>Using the heart disease dataset captured on a Cleveland hospital database available on Kaggle. Note, this datasets have been deidentified and cannot be traced back to patients in any form for privacy and confidentiality purposes.</p>
+<p>We import our dataset into R using read.csv and ensure a copy is available for python as an object.</p>
 <pre class="r"><code>getwd()</code></pre>
 <pre><code>## [1] &quot;/Users/lade/Documents/Tosin_R_root&quot;</code></pre>
 <pre class="r"><code>head(hrt)</code></pre>
@@ -123,7 +123,7 @@ To achieve our goal today we would be using R-Studio and the following packages:
 ## dtype: object</code></pre>
 <pre class="python"><code>r.hrt.shape</code></pre>
 <pre><code>## (303, 14)</code></pre>
-<p>Read your data guidelines or labeled notes thoroughly to understand what your data is trying to achieve and methods through which they were captured that would determine data completeness or missingness. Using R mice package we can check and visualise our data missingness as seen below. Check data summary using R object. R is know to produce more useful diagnostic outputs than python.</p>
+<p>Read your data guidelines or labeled notes thoroughly to understand what your data is trying to achieve and methods through which they were captured in order determine data completeness or missingness. Using R mice package we can check and visualise our data missingness as seen below. Check data summary using R object. R is know to produce more useful diagnostic outputs than python.</p>
 <pre class="r"><code>str(hrt)</code></pre>
 <pre><code>## &#39;data.frame&#39;:    303 obs. of  14 variables:
 ##  $ age     : int  63 37 41 56 57 57 56 44 52 57 ...
@@ -171,8 +171,10 @@ print_categories(hrt)</code></pre>
 ##  Mean   :2.314   Mean   :0.5446  
 ##  3rd Qu.:3.000   3rd Qu.:1.0000  
 ##  Max.   :3.000   Max.   :1.0000</code></pre>
-<p>Using R’s <a href="/post/report.html">DataExplorer package</a>, find the attached report on our dataset that gives a rapid overview of the current state of our data. This can be very useful for a fast workflow</p>
+<p>Using R’s DataExplorer package, find the attached report on our dataset that gives a rapid overview of the current state of our data. This can be very useful for a fast workflow</p>
 <pre class="r"><code>DataExplorer::create_report(hrt)</code></pre>
+<p><a href="/post/report.html">DataExplorer report</a></p>
+
 <pre class="r"><code>table(is.na.data.frame(hrt))</code></pre>
 <pre><code>## 
 ## FALSE 
@@ -227,7 +229,7 @@ This is the fastest way to see through a dataset and explore the correlations be
 plt.show()</code></pre>
 <p><img src="/post/p_test_files/figure-html/unnamed-chunk-17-1.png" /><!-- -->
 <br></br>
-This final plot is known as a violin plot which shows that the captured data has the female population exhibiting the target outcome more than the male population. That is in context with this dataset, the female population would have a higher tendency of been affected with a heart disease but not statistically confirmed or proven.</p>
+This final plot is known as a violin plot which shows that the captured data has the female population exhibiting the target outcome more than the male population. That is, the female population would have a higher tendency of been affected with a heart disease but not statistically confirmed or proven.</p>
 <p><br></br></p>
 <div id="thanks-for-reading-along-and-enjoying-this-piece.-would-work-on-a-follow-up-for-the-second-part-of-this-series-soon.-if-you-need-the-codes-for-this-blog-do-indicate-in-the-comment-section-or-reach-out-on-any-of-my-socials" class="section level5">
 <h5>Thanks for reading along and enjoying this piece. Would work on a follow up for the second part of this series soon. If you need the codes for this blog do indicate in the comment section or reach out on any of my socials</h5>
@@ -366,16 +368,16 @@ This final plot is known as a violin plot which shows that the captured data has
 
     
     <div class="title">
-      <a href="/playground/categories/tags" class="item" style="color: YELLOW;">BLOG</a>
+      <a href="/playground/categories/r" class="item" style="color: YELLOW;">BLOG</a>
     </div>
 
     
     <div class="title">
-      <a href="https://drive.google.com/open?id=1ij4lVo48-uHn-JgytWo14GWprYvPAVgA" class="item" style="color: red;">RESUMÉ</a>
+      <a href="https://drive.google.com/file/d/1boxYGM-C9wa9sc87r9nHMa8vaGaOCmky/view?usp=sharing" class="item" style="color: red;">RESUMÉ</a>
     </div>
     
     <div class="title">
-      <a href="/playground/categories/r" class="item" style="color: BLUE;">MINDLOOP</a>
+      <a href="/playground/mindloop.html" class="item" style="color: BLUE;">MINDLOOP</a>
     </div>
 
     
@@ -454,16 +456,21 @@ This final plot is known as a violin plot which shows that the captured data has
         <div class="ui stackable three column grid">
           <div class="column">
               
-              <pre><code class="language-md">My name is Tosin Dairo, I am a 
+              <pre><code class="language-md">My name is Tosin Dairo, a 
 Health Data Scientist 
 with a Veterinary Medical 
-background.
+background. I am passionate and driven 
+towards scaling tech-health companies
 
 </code></pre>
 
-<pre><code class="language-md">I am passionate about how 
-artificial intelligence can 
-impact on health for the general public.
+<pre><code class="language-md">After several failed attempts at 
+bootstrapping and scaling as a tech 
+entrepreneur in the health domain, 
+I recently cofounded a tech health 
+company that helps the blind read, 
+which was admitted on the Facebook 
+FB start accelerator program.
 </code></pre>
 
 <pre><code class="language-md">I believe in a world where 
@@ -471,39 +478,32 @@ data analytics, decentralisation and
 machine learning research 
 innovations would help to 
 proffer a disruptive wave in 
-the health and tech industry.
+the tech health industry.
 </code></pre>
 
               
           </div>
           <div class="column">
               
-              <pre><code class="language-md">I am conscientious and proactive 
-with strong data analytics 
-and web dev skills, constantly 
-exploring various innovative ways 
-to improve public health with 
-the aid of both animal and human 
-health data.
+              <pre><code class="language-md">
+
+
 
 </code></pre>
 
 <pre><code class="language-md">Not long ago in the past about 2 
 years ago, I led a social group 
-and explored showbiz and talent 
-management during my undergrad. 
+and explored entertainment logistics
+and talent management during my undergrad. 
 Anchored a range of extra-curricular 
 activities and social events.
 </code></pre>
 
-<pre><code class="language-md">My current entrepreneurial 
-adventure involves using 
-artificial intelligence and 
-machine learning to help the 
-visually impaired live a better 
-life like a normal person, 
-by providing them with AI powered 
-visual aids.
+<pre><code class="language-md">
+  
+  
+  
+  
 </code></pre>
 
               
